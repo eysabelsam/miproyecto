@@ -1,142 +1,189 @@
-# Guardar el archivo style.css con estilos modernos y responsivos
-
-style_css = """
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-/* HEADER */
-.portada {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-              url('img/portada.jpg') no-repeat center center/cover;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-}
-.logo-grande {
-  width: 100px;
-  margin-bottom: 20px;
-}
-.portada h1 {
-  font-size: 3rem;
-}
-.portada p {
-  font-size: 1.2rem;
-}
-
-/* SECCIONES */
-section {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #222;
-  text-align: center;
-}
-
-.historia p,
-.recompensas ul,
-.meta,
-.testimonios blockquote,
-.equipo p,
-.faq p,
-.accion p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
-/* GALERIA */
-.galeria {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.galeria img {
-  width: 280px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* RECOMPENSAS */
-.recompensas ul {
-  list-style: none;
-  padding: 0;
-}
-.recompensas li {
-  background: #e3f2fd;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 6px;
-}
-
-/* META */
-.barra-progreso {
-  background: #ddd;
-  border-radius: 25px;
-  overflow: hidden;
-}
-.progreso {
-  background: #4caf50;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
-
-/* TESTIMONIOS */
-.testimonios blockquote {
-  font-style: italic;
-  margin: 10px auto;
-  background: #fff3cd;
-  padding: 15px;
-  border-left: 5px solid #ffc107;
-  border-radius: 4px;
-  max-width: 800px;
-}
-
-/* ACCIÓN */
-.accion {
-  text-align: center;
-}
-.accion button {
-  background: #28a745;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-bottom: 15px;
-}
-.accion button:hover {
-  background: #218838;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .galeria {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-"""
-
-# Guardar como archivo
-with open("/mnt/data/style.css", "w", encoding="utf-8") as f:
-    f.write(style_css)
-
-"/mnt/data/style.css"
-
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+  <title>Aioria Sport - Cultura y Rendimiento</title> 
+  <link rel="stylesheet" href="estilos.css" /> 
+  <link rel="preconnect" href="https://fonts.googleapis.com" /> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet"> 
+</head> 
+<script> 
+  // Detecta cuando la sección historia está visible en pantalla y le agrega clase 'visible' 
+  document.addEventListener('DOMContentLoaded', () => { 
+    const historia = document.querySelector('.historia-contenido'); 
+ 
+    function checkVisibility() { 
+      const rect = historia.getBoundingClientRect(); 
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight; 
+ 
+      if (rect.top <= windowHeight - 100) { 
+        historia.classList.add('visible'); 
+        window.removeEventListener('scroll', checkVisibility); // Solo una vez 
+      } 
+    } 
+ 
+    window.addEventListener('scroll', checkVisibility); 
+    checkVisibility(); // Verifica si ya está visible al cargar 
+  }); 
+</script> 
+<script src="https://unpkg.com/scrollreveal"></script> 
+<script> 
+  ScrollReveal().reveal('.hero-content', { 
+    origin: 'left', 
+    distance: '50px', 
+    duration: 1200, 
+    delay: 200, 
+    easing: 'ease-out', 
+    opacity: 0 
+  }); 
+ 
+  ScrollReveal().reveal('.hero-image', { 
+    origin: 'right', kbd
+    distance: '50px', 
+    duration: 1200, 
+    delay: 400, 
+    easing: 'ease-out', 
+    opacity: 0 
+  }); 
+</script> 
+ 
+<body> 
+ 
+  <!-- PORTADA --> 
+ <header class="hero"> 
+  <div class="hero-content"> 
+    <img src="aioria-logo-blanco.png" alt="Logo Aioria" class="hero-logo"> 
+    <h1>Aioria Sport</h1> 
+    <p>Ropa deportiva que celebra nuestra cultura</p> 
+  </div> 
+  <div class="hero-image"> 
+    <img src="playera-frontal-trasera.png" alt="Playeras Aioria"> 
+  </div> 
+</header> 
+ 
+ 
+ 
+  <!-- INTRODUCCIÓN --> 
+  <section class="introduccion"> 
+    <div class="intro-contenido"> 
+      <img src="emprendedor.png" alt="Fundador" class="perfil" /> 
+      <div> 
+        <h2>¿Quiénes somos?</h2> 
+        <p>Fusionamos el rendimiento deportivo con la esencia de México. Somos más que ropa: somos cultura en movimiento.</p> 
+      </div> 
+    </div> 
+  </section> 
+ 
+  <!-- DISEÑOS --> 
+  <section class="proyecto"> 
+    <h2>Diseños que Hablan</h2> 
+    <p class="subtitulo">Cada prenda es una declaración de identidad</p> 
+    <div class="galeria"> 
+      <img src="diseno1.png" alt="Diseño 1"> 
+      <img src="diseno2.png" alt="Diseño 2"> 
+      <img src="diseno3.png" alt="Diseño 3"> 
+    </div> 
+  </section> 
+ 
+ 
+  <!-- LLAMADO A LA ACCIÓN --> 
+  <section class="accion"> 
+    <h2>Apoya la Campaña</h2> 
+    <p>Con tu ayuda, llevaremos el espíritu de México al siguiente nivel.</p> 
+    <a href="#" class="boton">¡Apoya Nuestra Cultura!</a> 
+  </section> 
+<!-- HISTORIA DEL PROYECTO --> 
+<!-- NUESTRA HISTORIA --> 
+<section class="historia"> 
+  <div class="historia-contenido"> 
+    <h2>Mi Historia, Nuestra Identidad</h2> 
+    <p class="frase">“No solo vestimos ropa, vestimos quiénes somos.”</p> 
+    <p><strong>Hola, soy Manuel.</strong> Migré de México con el corazón lleno de sueños y el alma arraigada en mis raíces. En cada paso lejos de casa, noté cómo nuestra identidad se diluye en la ropa que usamos. Ninguna camiseta decía de dónde venía. Ninguna representaba lo que somos.</p> 
+ 
+    <p>Así nació <strong>Aioria Sport</strong>: una marca de camisetas deportivas inspiradas en nuestra cultura, diseñadas con orgullo. Colores, patrones y símbolos que evocan nuestros paisajes, nuestras comunidades y nuestras historias.</p> 
+ 
+    <p>Con tu ayuda, quiero lanzar la primera colección. <strong>Necesito recaudar $5,000 USD</strong> para producir prendas únicas que nos representen. Cada peso será destinado a materiales de calidad, impresión y envío.</p> 
+ 
+    <p><strong>Al apoyar este proyecto, apoyas algo más que ropa:</strong> estás construyendo una comunidad que se siente vista, valorada y orgullosa de sus raíces.</p> 
+ 
+    <a href="https://www.gofundme.com/" target="_blank" class="btn-apoya">Apóyame en GoFundMe</a> 
+  </div> 
+</section> 
+<!-- METAS Y PROGRESO --> 
+  <section class="progreso"> 
+    <h2>Meta de Recaudación</h2> 
+    <div class="barra-container"> 
+      <div class="barra-progreso" style="width: 24%;">$1,200 / $5,000</div> 
+    </div> 
+  </section> 
+ 
+  <!-- RECOMPENSAS --> 
+  <section class="recompensas"> 
+    <h2>Recompensas</h2> 
+    <ul> 
+      <li><strong>$10 USD:</strong> Agradecimiento en redes sociales</li> 
+      <li><strong>$25 USD:</strong> 1 playera edición limitada</li> 
+      <li><strong>$50 USD:</strong> Paquete de 2 playeras + agradecimiento</li> 
+      <li><strong>$100 USD o más:</strong> Nombre en el sitio web + paquete completo</li> 
+    </ul> 
+  </section> 
+ 
+  <!-- TESTIMONIOS --> 
+  <section class="testimonios"> 
+    <h2>Testimonios</h2> 
+    <blockquote>“Por fin una marca que representa lo que somos. ¡Gracias Aioria Sport!” – Laura G.</blockquote> 
+    <blockquote>“Diseños hermosos y de calidad. Me siento orgulloso de usarla.” – Carlos M.</blockquote> 
+  </section> 
+ 
+  <!-- EQUIPO --> 
+  <section class="equipo"> 
+    <h2>Conoce al Equipo</h2> 
+    <div class="miembro"> 
+      <img src="fundador.png" alt="Manuel"> 
+      <p><strong>Manuel</strong> – Fundador & Diseñador</p> 
+    </div> 
+  </section> 
+ 
+  <!-- PREGUNTAS FRECUENTES --> 
+  <section class="faq"> 
+    <h2>Preguntas Frecuentes</h2> 
+    <details> 
+      <summary>¿Cuándo recibiré mi camiseta?</summary> 
+      <p>Al finalizar la campaña, comenzaremos producción. Se estima entrega en 6 semanas.</p> 
+    </details> 
+    <details> 
+      <summary>¿Hacen envíos internacionales?</summary> 
+      <p>Sí, enviamos a todo el mundo desde México.</p> 
+    </details> 
+  </section> 
+ <!-- LLAMADO A LA ACCIÓN --> 
+  <section class="accion"> 
+    <a href="#" class="btn">¡Dona Ahora!</a> 
+    <p>Comparte y apoya nuestra cultura con estilo.</p> 
+  </section> 
+ 
+  <!-- FOOTER --> 
+  <footer> 
+    <p>Síguenos:</p> 
+    <div class="redes"> 
+      <a href="#">Instagram</a> 
+      <a href="#">Facebook</a> 
+      <a href="#">TikTok</a> 
+    </div> 
+    <p>© 2025 Aioria Sport</p> 
+  </footer> 
+ 
+  <script> 
+    ScrollReveal().reveal('.portada, .introduccion, .historia, .proyecto, .progreso, .recompensas, .testimonios, .equipo, .faq, .accion', { 
+      delay: 200, 
+      distance: '50px', 
+      origin: 'bottom', 
+      duration: 800, 
+      easing: 'ease-in-out', 
+      reset: false 
+    }); 
+  </script> 
+ 
+</body> 
+</html>
