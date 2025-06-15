@@ -1,0 +1,100 @@
+# Guardar el archivo index.html con el contenido actualizado para la campaña Kickstarter
+
+index_html = """
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aioria Sport - Kickstarter</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<script src="script.js"></script>
+
+<body>
+  <!-- HEADER -->
+  <header class="portada">
+    <div class="contenido-portada">
+      <img src="mexico-logo.png" alt="Logo de Aioria Sport" class="logo-grande"/>
+      <h1>Aioria Sport</h1>
+      <p>Rinde con orgullo, entrena con cultura</p>
+    </div>
+  </header>
+
+  <!-- HISTORIA -->
+  <section class="historia">
+    <h2>Nuestra Historia</h2>
+    <p>
+      Hola, soy Manuel, un migrante de México que ha recorrido un largo camino en busca de un lugar al que pertenezca.
+      A lo largo de mi viaje, he sentido la falta de conexión con mi cultura y mis raíces, especialmente cuando se trata de la ropa que usamos.
+      Las camisetas deportivas no cuentan nuestras historias. Por eso, decidí crear <strong>Aioria Sport</strong>: ropa deportiva que celebra nuestras raíces.
+    </p>
+  </section>
+
+  <!-- DISEÑOS -->
+  <section class="proyecto">
+    <h2>Diseños que Hablan</h2>
+    <div class="galeria">
+      <img src="diseno1.png" alt="Diseño 1">
+      <img src="diseno2.png" alt="Diseño 2">
+      <img src="diseno3.png" alt="Diseño 3">
+    </div>
+  </section>
+
+  <!-- RECOMPENSAS -->
+  <section class="recompensas">
+    <h2>Recompensas</h2>
+    <ul>
+      <li><strong>$10 USD:</strong> Agradecimiento personalizado por correo.</li>
+      <li><strong>$25 USD:</strong> 1 camiseta edición básica + agradecimiento.</li>
+      <li><strong>$50 USD:</strong> 2 camisetas edición especial + envío gratuito.</li>
+      <li><strong>$100 USD:</strong> Pack completo + nombre en nuestro sitio como patrocinador oficial.</li>
+    </ul>
+  </section>
+
+  <!-- META Y PROGRESO -->
+  <section class="meta">
+    <h2>Meta de Recaudación</h2>
+    <div class="barra-progreso">
+      <div class="progreso" style="width: 40%;">$2,000 / $5,000</div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios">
+    <h2>Lo que dice la comunidad</h2>
+    <blockquote>“Finalmente una marca con la que me siento representado.” – José R.</blockquote>
+    <blockquote>“El diseño es hermoso, y la calidad excelente.” – Ana M.</blockquote>
+  </section>
+
+  <!-- EQUIPO -->
+  <section class="equipo">
+    <h2>Conoce al equipo</h2>
+    <p>Manuel – Fundador y diseñador principal.<br>
+       Karla – Estratega de marketing.<br>
+       Luis – Coordinador de producción.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>Preguntas Frecuentes</h2>
+    <p><strong>¿Cuándo se entregarán las camisetas?</strong><br>Se estima el envío en 2 meses después de alcanzar la meta.</p>
+    <p><strong>¿Envían a otros países?</strong><br>Sí, realizamos envíos internacionales.</p>
+  </section>
+
+  <!-- LLAMADO A LA ACCIÓN -->
+  <section class="accion">
+    <button onclick="window.location.href='https://kickstarter.com'">¡Apóyanos en Kickstarter!</button>
+    <p>Comparte esta campaña con tu comunidad. ¡Gracias por tu apoyo!</p>
+  </section>
+</body>
+</html>
+"""
+
+# Guardar como archivo
+with open("/mnt/data/index.html", "w", encoding="utf-8") as f:
+    f.write(index_html)
+
+"/mnt/data/index.html"
+
+ 
